@@ -14,7 +14,7 @@ export type TTodoStatus = keyof typeof STATUS;
 export type TTodoPriority = keyof typeof PRIORITY;
 
 export interface ITodo {
-  id: string | number;
+  id: string;
   content: string;
   created: number;
   status: TTodoStatus;

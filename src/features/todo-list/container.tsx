@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from 'antd';
+import { StyledCol as Col, StyledRow as Row } from '@/BaseUI';
 
 import { allTodoSelector } from '@/app/store/selectors';
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
@@ -8,6 +8,7 @@ import { Todo } from '@/components/todo';
 import { TodoList } from '@/components/todo-list';
 import { NewTodo } from '@/components/new-todo';
 import { TTodoData } from '@/types';
+
 import { addTodo, toggleStatus } from './store/actionCreators';
 
 const MemorizedTodo = React.memo(Todo);

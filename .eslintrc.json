@@ -7,7 +7,8 @@
     "prettier",
     "airbnb",
     "airbnb-typescript",
-    "airbnb/hooks"
+    "airbnb/hooks",
+    "plugin:jest-dom/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -33,9 +34,10 @@
         "ImportDeclaration": { "multiline": true, "minProperties": 5 },
         "ExportDeclaration": { "multiline": true, "minProperties": 5 }
     }],
-    "semi": "error"
+    "semi": "error",
+    "react/require-default-props": "off"
   },
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "testing-library"],
   "settings": {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]

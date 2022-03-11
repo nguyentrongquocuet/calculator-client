@@ -1,5 +1,9 @@
 import React from 'react';
-import { Tag, Checkbox, Row } from 'antd';
+import {
+  StyledTag as Tag,
+  StyledCheckbox as Checkbox,
+  StyledRow as Row,
+} from '@/BaseUI';
 import { ITodo } from '@/types';
 
 interface ITodoProps extends ITodo {
@@ -17,7 +21,7 @@ const Todo: React.FC<ITodoProps> = ({
   const isCompleted = status === 'COMPLETED';
 
   return (
-    <Row justify="space-between">
+    <Row>
       <Checkbox onChange={() => onToggleStatus(id)} checked={isCompleted}>
         {`${content} (${created})`}
       </Checkbox>

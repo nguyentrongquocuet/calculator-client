@@ -1,6 +1,12 @@
-import { PRIORITY, STATUS, TTodoData } from '@/types';
-import { Button, Input, Select, Tag } from 'antd';
 import React from 'react';
+import {
+  StyledButton as Button,
+  StyledInput as Input,
+  StyledSelect as Select,
+  StyledTag as Tag,
+} from '@/BaseUI';
+
+import { PRIORITY, STATUS, TTodoData, TTodoPriority } from '@/types';
 
 interface INewTodoProps {
   onSubmit(todo: TTodoData): void;
@@ -28,20 +34,30 @@ const NewTodo: React.FC<INewTodoProps> = ({ onSubmit }) => {
     setState((old) => ({ ...old, content: e.target.value }));
   };
 
-  const handlePriorityChange = (priority: any) => {
-    setState((old) => ({ ...old, priority }));
+  const handlePriorityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setState((old) => ({ ...old, priority: e.target.value as TTodoPriority }));
   };
 
-  const handleAdd = () => {
+  const handleAddTodo = () => {
     onSubmit(state);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const { key } = e;
+
+    if (key === 'Enter') {
+      handleAddTodo();
+    }
+  };
+
   return (
-    <Input.Group style={{ display: 'flex' }} compact>
+    <Input.Group style={{ display: 'flex' }}>
       <Input
         value={state.content}
         onChange={handleContentChange}
         placeholder="add todo"
+        onKeyDown={handleKeyDown}
+        fluid
       />
       <Select value={state.priority} onChange={handlePriorityChange}>
         {priorityOptions.map((option) => (
@@ -54,7 +70,7 @@ const NewTodo: React.FC<INewTodoProps> = ({ onSubmit }) => {
           </Select.Option>
         ))}
       </Select>
-      <Button type="primary" onClick={handleAdd}>
+      <Button type="primary" onClick={handleAddTodo}>
         Add
       </Button>
     </Input.Group>

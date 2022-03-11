@@ -7,14 +7,14 @@ const initialState:ITodo[] = [
   {
     content: 'todo1',
     created: 123,
-    id: 12344,
+    id: '12344',
     priority: PRIORITY.HIGH,
     status: STATUS.COMPLETED,
   },
   {
     content: 'todo2',
     created: 123,
-    id: 12345,
+    id: '12345',
     priority: PRIORITY.HIGH,
     status: STATUS.UNCOMPLETED,
   },

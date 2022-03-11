@@ -1,5 +1,5 @@
-import { Col } from 'antd';
 import React from 'react';
+import { StyledCol as Col } from '@/BaseUI';
 import { ITodo } from '@/types';
 
 interface ITodoListProps {
