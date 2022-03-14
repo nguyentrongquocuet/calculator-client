@@ -2,7 +2,7 @@ import { PRIORITY, STATUS } from '@/types';
 import { todoListReducer } from '../store';
 import { addTodo, toggleStatus } from '../store/actionCreators';
 
-describe('SLICE_TEST_1', () => {
+describe('Todo list slice', () => {
   const defaultState = todoListReducer(undefined, {} as unknown as any);
 
   test('Properly add new todo', () => {

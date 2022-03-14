@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyledCol as Col, StyledRow as Row } from '@/BaseUI';
 
-import { allTodoSelector } from '@/app/store/selectors';
+import { filteredTodoListSelector } from '@/app/store/selectors';
 import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
+import { TEST_ID } from '@/app/testing';
 
 import { Todo } from '@/components/todo';
 import { TodoList } from '@/components/todo-list';
@@ -14,7 +15,7 @@ import { addTodo, toggleStatus } from './store/actionCreators';
 const MemorizedTodo = React.memo(Todo);
 
 const TodoListContainer = () => {
-  const todoList = useAppSelector(allTodoSelector);
+  const todoList = useAppSelector(filteredTodoListSelector);
   const dispatch = useAppDispatch();
 
   const onToggleStatus = React.useCallback(
@@ -32,7 +33,7 @@ const TodoListContainer = () => {
   );
 
   return (
-    <Row>
+    <Row data-testid={TEST_ID.TODO_LIST}>
       <TodoList
         todoList={todoList}
         renderItem={(todo) => (
