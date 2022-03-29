@@ -1,5 +1,5 @@
 # Client of [rest](https://github.com/nguyentrongquocuet/rest-calculator)/[soap](https://github.com/nguyentrongquocuet/soap-calculator) services
-# I cant enable CORS on my soap service, so i created a proxy at `localhost:1874` that forwards every request it takes to the `Soap Service`
+# I cant enable CORS on my soap service, so i created a proxy at `localhost:1874` that forwards every request it takes to the `SOAP Service`
 
 # Edit `views/index.tsx` to modify the url of `REST Service`.
 
