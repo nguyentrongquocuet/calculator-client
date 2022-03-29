@@ -1,9 +1,11 @@
 import React from 'react';
 import { CalculatorService } from '@/api/calculator';
 
-const SOAPURL = import.meta.env.VITE_SOAP_URL;
+const toValidUrl = (origin: string) => `${origin}/calculator`;
 
-const RESTURL = import.meta.env.VITE_REST_URL;
+const SOAPURL = toValidUrl(import.meta.env.VITE_PROXY_URL);
+
+const RESTURL = toValidUrl(import.meta.env.VITE_REST_URL);
 
 const calculatorService = CalculatorService.init(SOAPURL, RESTURL);
 
