@@ -1,9 +1,9 @@
 import React from 'react';
 import { CalculatorService } from '@/api/calculator';
 
-const SOAPURL = 'http://localhost:1874/soapWS';
+const SOAPURL = import.meta.env.VITE_SOAP_URL;
 
-const RESTURL = 'http://localhost:8080/calculator';
+const RESTURL = import.meta.env.VITE_REST_URL;
 
 const calculatorService = CalculatorService.init(SOAPURL, RESTURL);
 
@@ -34,6 +34,18 @@ const View = () => {
     calculatorService.performOperation(num1 || 0, operation, num2 || 0).then((res) => {
       setResult(res);
     });
+  };
+
+  const removePrefix = (numStr: string) => {
+    if (!numStr) return numStr;
+    // eslint-disable-next-line no-param-reassign
+    numStr = numStr.toString();
+    const [real, suffix] = numStr.split('.');
+
+    if (!suffix) return real;
+    if (suffix === '0') return real;
+
+    return numStr;
   };
 
   return (
@@ -85,7 +97,7 @@ const View = () => {
             Result:
           </span>
           <span className="result">
-            {result}
+            {removePrefix(result)}
           </span>
         </div>
         <div className="trigger">
