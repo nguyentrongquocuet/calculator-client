@@ -1,3 +1,41 @@
 body {
 	margin: 0;
 }
+
+.container {
+	max-width: 90%;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+}
+
+.calculator {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.formLabel {
+	margin-bottom: 20px;
+}
+
+.formLabel input,
+.formLabel select {
+	margin-left: 10px;
+}
+.result {
+	margin-bottom: 10px;
+	align-self: flex-start;
+}
+
+.result span {
+	margin-right: 10px;
+}
+
+

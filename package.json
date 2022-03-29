@@ -10,7 +10,8 @@
     "test": "jest --watch --coverage",
     "lint": "npx eslint src",
     "lint:fix": "npx eslint --fix src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "proxy": "node ./proxy/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -55,7 +56,15 @@
   "dependencies": {
     "@ant-design/colors": "^6.0.0",
     "@reduxjs/toolkit": "^1.8.0",
+    "@types/axios": "^0.14.0",
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "fast-xml-parser": "^4.0.7",
+    "http-proxy-middleware": "^2.0.4",
+    "i": "^0.3.7",
     "nanoid": "^3.3.1",
+    "npm": "^8.5.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
