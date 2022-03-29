@@ -39,6 +39,17 @@ const View = () => {
   return (
     <div className="container">
       <div className="wrapper">
+        <div className="services">
+          <h2>Click to change the service</h2>
+          <div>
+            <button type="button" onClick={() => calculatorService.switchToSOAP()}>
+              SOAP
+            </button>
+            <button type="button" onClick={() => calculatorService.switchToREST()}>
+              REST
+            </button>
+          </div>
+        </div>
         <div className="calculator">
           <label htmlFor="num1" className="formLabel">
             Number 1
@@ -69,11 +80,11 @@ const View = () => {
             <input id="num2" type="number" ref={num2Ref} />
           </label>
         </div>
-        <div className="result">
+        <div className="resultWrapper">
           <span>
-            Result
+            Result:
           </span>
-          <span>
+          <span className="result">
             {result}
           </span>
         </div>

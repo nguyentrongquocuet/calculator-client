@@ -12,7 +12,7 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	align-items: center;
+	align-items: flex-start;
 }
 
 .calculator {
@@ -29,13 +29,37 @@ body {
 .formLabel select {
 	margin-left: 10px;
 }
-.result {
+
+.resultWrapper {
 	margin-bottom: 10px;
-	align-self: flex-start;
 }
 
-.result span {
+.result:not(:empty) {
+	margin-bottom: 10px;
+	align-self: flex-start;
+	border-radius: 2px;
+	padding: 5px 10px;
+	border: 1px solid #f2f2f2;
+}
+
+.result{
+	margin-left: 10px;
 	margin-right: 10px;
 }
 
+.services {
+	margin-bottom: 10px;
+}
 
+.services h2 {
+	margin: 0;
+}
+
+.services div {
+	margin-top: 10px;
+}
+
+.services div button {
+	padding: 5px 10px;
+	margin-right: 10px;
+}
